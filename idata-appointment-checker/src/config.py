@@ -1,0 +1,60 @@
+import os
+from pathlib import Path
+from typing import Dict
+
+from dotenv import load_dotenv
+
+
+def load_config() -> Dict:
+    """
+    Load configuration from environment variables.
+    
+    Returns:
+        Configuration dictionary
+    """
+    # Load .env file if it exists
+    env_path = Path(__file__).parent.parent / '.env'
+    if env_path.exists():
+        load_dotenv(env_path)
+    
+    config = {
+        'general': {
+            'check_interval_minutes': int(os.getenv('CHECK_INTERVAL_MINUTES', '10')),
+            'headless_browser': os.getenv('HEADLESS_BROWSER', 'true').lower() == 'true',
+            'log_level': os.getenv('LOG_LEVEL', 'INFO'),
+        },
+        'telegram': {
+            'enabled': os.getenv('TELEGRAM_ENABLED', 'false').lower() == 'true',
+            'bot_token': os.getenv('TELEGRAM_BOT_TOKEN', ''),
+            'chat_id': os.getenv('TELEGRAM_CHAT_ID', ''),
+        },
+        'email': {
+            'enabled': os.getenv('EMAIL_ENABLED', 'false').lower() == 'true',
+            'smtp_server': os.getenv('EMAIL_SMTP_SERVER', 'smtp.gmail.com'),
+            'smtp_port': int(os.getenv('EMAIL_SMTP_PORT', '587')),
+            'smtp_username': os.getenv('EMAIL_SMTP_USERNAME', ''),
+            'smtp_password': os.getenv('EMAIL_SMTP_PASSWORD', ''),
+            'from_email': os.getenv('EMAIL_FROM', ''),
+            'to_email': os.getenv('EMAIL_TO', ''),
+        },
+        'appointment': {
+            'residence_city': os.getenv('RESIDENCE_CITY', 'İstanbul'),
+            'idata_offices': os.getenv('IDATA_OFFICES', 'Altunizade,Gayrettepe').split(','),
+            'travel_purpose': os.getenv('TRAVEL_PURPOSE', 'Tourism'),
+            'service_type': os.getenv('SERVICE_TYPE', 'Standard'),
+            'num_persons': os.getenv('NUM_PERSONS', '3'),
+        }
+    }
+    
+    # Validate required configurations
+    if config['telegram']['enabled']:
+        if not config['telegram']['bot_token'] or not config['telegram']['chat_id']:
+            raise ValueError("Telegram is enabled but BOT_TOKEN or CHAT_ID is missing")
+    
+    if config['email']['enabled']:
+        required_email_fields = ['smtp_username', 'smtp_password', 'from_email', 'to_email']
+        for field in required_email_fields:
+            if not config['email'][field]:
+                raise ValueError(f"Email is enabled but {field.upper()} is missing")
+    
+    return config

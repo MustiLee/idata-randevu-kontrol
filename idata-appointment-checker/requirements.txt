@@ -1,0 +1,19 @@
+# Web scraping and automation
+selenium==4.16.0
+beautifulsoup4==4.12.2
+requests==2.31.0
+
+# Image processing and OCR
+Pillow==10.1.0
+opencv-python==4.8.1.78
+pytesseract==0.3.10
+numpy==1.26.2
+
+# Scheduling
+APScheduler==3.10.4
+
+# Environment and configuration
+python-dotenv==1.0.0
+
+# Additional utilities
+lxml==4.9.3

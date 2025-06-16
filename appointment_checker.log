@@ -1,0 +1,483 @@
+2025-06-16 18:01:47,782 - __main__ - INFO - Starting IDATA Appointment Checker...
+2025-06-16 18:01:47,782 - __main__ - INFO - Check interval: 10 minutes
+2025-06-16 18:01:47,782 - __main__ - INFO - Headless browser: True
+2025-06-16 18:01:47,782 - __main__ - INFO - Telegram notifications: False
+2025-06-16 18:01:47,783 - __main__ - INFO - Email notifications: False
+2025-06-16 18:01:47,783 - __main__ - INFO - Appointment configuration:
+2025-06-16 18:01:47,783 - __main__ - INFO -   - Residence City: İstanbul
+2025-06-16 18:01:47,783 - __main__ - INFO -   - IDATA Offices: Altunizade, Gayrettepe
+2025-06-16 18:01:47,783 - __main__ - INFO -   - Travel Purpose: Tourism
+2025-06-16 18:01:47,783 - __main__ - INFO -   - Service Type: Standard
+2025-06-16 18:01:47,783 - __main__ - INFO -   - Number of Persons: 3
+2025-06-16 18:01:47,784 - src.scheduler.scheduler - INFO - Starting scheduler with 10 minute interval
+2025-06-16 18:01:47,785 - src.scheduler.scheduler - INFO - Running initial appointment check...
+2025-06-16 18:01:47,785 - src.scheduler.scheduler - INFO - [2025-06-16 18:01:47] Starting appointment check...
+2025-06-16 18:01:47,785 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:01:47,785 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:01:47,785 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:01:47,785 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:01:47,785 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:01:50,261 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:01:53,950 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:01:53,970 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:01:53,983 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:01:54,095 - src.captcha.solver - INFO - Captcha solved: CEREGTE
+2025-06-16 18:01:54,095 - src.scraper.appointment_checker - INFO - CAPTCHA solved: CEREGTE
+2025-06-16 18:01:54,100 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:01:54,200 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: CEREGTE
+2025-06-16 18:01:54,204 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:01:54,615 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:01:59,634 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:01:59,717 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:01:59,717 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:01:59,717 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:02:00,525 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:02:04,277 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:02:04,293 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:02:04,306 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:02:04,401 - src.captcha.solver - INFO - Captcha solved: EECELE
+2025-06-16 18:02:04,401 - src.scraper.appointment_checker - INFO - CAPTCHA solved: EECELE
+2025-06-16 18:02:04,407 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:02:04,493 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: EECELE
+2025-06-16 18:02:04,498 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:02:04,812 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:02:09,831 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:02:09,920 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:02:09,920 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:02:09,920 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:02:09,920 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:02:09,920 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:02:09,920 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:02:09,920 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:02:09,920 - src.scheduler.scheduler - INFO - [2025-06-16 18:01:47] Appointment check completed
+2025-06-16 18:02:09,921 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-16 18:02:09,921 - src.scheduler.scheduler - INFO - Scheduler started. Press Ctrl+C to stop.
+2025-06-16 18:02:09,922 - apscheduler.scheduler - INFO - Added job "Check Italy visa appointments" to job store "default"
+2025-06-16 18:02:09,922 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-16 18:03:06,993 - src.scheduler.scheduler - INFO - Received signal 2, shutting down...
+2025-06-16 18:03:06,994 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-06-16 18:03:06,994 - src.scheduler.scheduler - INFO - Scheduler stopped
+2025-06-16 18:03:06,994 - src.scheduler.scheduler - INFO - Scheduler stopped by user
+2025-06-16 18:03:17,027 - __main__ - INFO - Starting IDATA Appointment Checker...
+2025-06-16 18:03:17,027 - __main__ - INFO - Check interval: 1 minutes
+2025-06-16 18:03:17,027 - __main__ - INFO - Headless browser: True
+2025-06-16 18:03:17,027 - __main__ - INFO - Telegram notifications: True
+2025-06-16 18:03:17,027 - __main__ - INFO - Email notifications: False
+2025-06-16 18:03:17,027 - __main__ - INFO - Appointment configuration:
+2025-06-16 18:03:17,027 - __main__ - INFO -   - Residence City: İstanbul
+2025-06-16 18:03:17,028 - __main__ - INFO -   - IDATA Offices: Altunizade, Gayrettepe
+2025-06-16 18:03:17,028 - __main__ - INFO -   - Travel Purpose: Tourism
+2025-06-16 18:03:17,028 - __main__ - INFO -   - Service Type: Standard
+2025-06-16 18:03:17,028 - __main__ - INFO -   - Number of Persons: 3
+2025-06-16 18:03:20,109 - src.notifier.notifier - ERROR - Failed to send Telegram notification: 400 Client Error: Bad Request for url: https://api.telegram.org/bot7548481068:AAGu39H2aOC5W0ml6Cnoc0rFuLMR4406BCw/sendMessage
+2025-06-16 18:03:20,116 - src.scheduler.scheduler - INFO - Starting scheduler with 1 minute interval
+2025-06-16 18:03:20,117 - src.scheduler.scheduler - INFO - Running initial appointment check...
+2025-06-16 18:03:20,117 - src.scheduler.scheduler - INFO - [2025-06-16 18:03:20] Starting appointment check...
+2025-06-16 18:03:20,117 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:03:20,117 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:03:20,117 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:03:20,117 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:03:20,117 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:03:21,028 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:03:24,661 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:03:24,678 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:03:24,692 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:03:24,791 - src.captcha.solver - INFO - Captcha solved: SWELEE
+2025-06-16 18:03:24,791 - src.scraper.appointment_checker - INFO - CAPTCHA solved: SWELEE
+2025-06-16 18:03:24,797 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:03:24,882 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: SWELEE
+2025-06-16 18:03:24,887 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:03:25,621 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:03:30,637 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:03:30,738 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:03:30,738 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:03:30,738 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:03:31,558 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:03:31,558 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:03:31,558 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:03:31,558 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:03:31,558 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:03:31,559 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:03:31,559 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:03:35,375 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:03:35,390 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:03:35,401 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:03:35,491 - src.captcha.solver - INFO - Captcha solved: CEEECE
+2025-06-16 18:03:35,491 - src.scraper.appointment_checker - INFO - CAPTCHA solved: CEEECE
+2025-06-16 18:03:35,496 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:03:35,581 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: CEEECE
+2025-06-16 18:03:35,587 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:03:35,987 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:03:41,004 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:03:41,091 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:03:41,091 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:03:41,091 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:03:41,091 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:03:41,091 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:03:41,091 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:03:41,091 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:03:41,091 - src.scheduler.scheduler - INFO - [2025-06-16 18:03:20] Appointment check completed
+2025-06-16 18:03:41,091 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-16 18:03:41,091 - src.scheduler.scheduler - INFO - Scheduler started. Press Ctrl+C to stop.
+2025-06-16 18:03:41,093 - apscheduler.scheduler - INFO - Added job "Check Italy visa appointments" to job store "default"
+2025-06-16 18:03:41,093 - apscheduler.scheduler - INFO - Scheduler started
+2025-06-16 18:04:41,097 - apscheduler.executors.default - INFO - Running job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:05:41 +03)" (scheduled at 2025-06-16 18:04:41.091663+03:00)
+2025-06-16 18:04:41,098 - src.scheduler.scheduler - INFO - [2025-06-16 18:04:41] Starting appointment check...
+2025-06-16 18:04:41,099 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:04:41,099 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:04:41,099 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:04:41,099 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:04:41,099 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:04:41,994 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:04:41,994 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:04:41,994 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:04:41,994 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:04:41,995 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:04:41,995 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:04:41,995 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:04:45,722 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:04:45,739 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:04:45,751 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:04:45,842 - src.captcha.solver - INFO - Captcha solved: EEEEEE
+2025-06-16 18:04:45,842 - src.scraper.appointment_checker - INFO - CAPTCHA solved: EEEEEE
+2025-06-16 18:04:45,847 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:04:45,933 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: EEEEEE
+2025-06-16 18:04:45,939 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:04:46,406 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:04:51,426 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:04:51,513 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:04:51,513 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:04:51,513 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:04:52,317 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:04:52,318 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:04:52,318 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:04:52,318 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:04:52,318 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:04:52,318 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:04:52,318 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:04:56,062 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:04:56,077 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:04:56,089 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:04:56,180 - src.captcha.solver - INFO - Captcha solved: EEETLE
+2025-06-16 18:04:56,180 - src.scraper.appointment_checker - INFO - CAPTCHA solved: EEETLE
+2025-06-16 18:04:56,185 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:04:56,271 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: EEETLE
+2025-06-16 18:04:56,276 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:04:56,601 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:05:01,621 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:05:01,707 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:05:01,708 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:05:01,708 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:05:01,708 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:05:01,708 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:05:01,708 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:05:01,708 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:05:01,708 - src.scheduler.scheduler - INFO - [2025-06-16 18:04:41] Appointment check completed
+2025-06-16 18:05:01,708 - apscheduler.executors.default - INFO - Job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:05:41 +03)" executed successfully
+2025-06-16 18:05:41,093 - apscheduler.executors.default - INFO - Running job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:06:41 +03)" (scheduled at 2025-06-16 18:05:41.091663+03:00)
+2025-06-16 18:05:41,094 - src.scheduler.scheduler - INFO - [2025-06-16 18:05:41] Starting appointment check...
+2025-06-16 18:05:41,095 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:05:41,095 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:05:41,095 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:05:41,095 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:05:41,095 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:05:41,984 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:05:41,985 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:05:41,985 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:05:41,985 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:05:41,985 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:05:41,985 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:05:41,985 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:05:45,788 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:05:45,804 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:05:45,816 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:05:45,931 - src.captcha.solver - INFO - Captcha solved: EXULEE
+2025-06-16 18:05:45,931 - src.scraper.appointment_checker - INFO - CAPTCHA solved: EXULEE
+2025-06-16 18:05:45,936 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:05:46,025 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: EXULEE
+2025-06-16 18:05:46,030 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:05:46,443 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:05:51,464 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:05:51,551 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:05:51,552 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:05:51,552 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:05:52,369 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:05:52,370 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:05:52,370 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:05:52,370 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:05:52,370 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:05:52,370 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:05:52,370 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:05:56,068 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:05:56,084 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:05:56,094 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:05:56,188 - src.captcha.solver - INFO - Captcha solved: LECELE
+2025-06-16 18:05:56,189 - src.scraper.appointment_checker - INFO - CAPTCHA solved: LECELE
+2025-06-16 18:05:56,194 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:05:56,282 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: LECELE
+2025-06-16 18:05:56,288 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:05:56,645 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:06:01,664 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:06:01,757 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:06:01,757 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:06:01,757 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:06:01,757 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:06:01,757 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:06:01,757 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:06:01,757 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:06:01,757 - src.scheduler.scheduler - INFO - [2025-06-16 18:05:41] Appointment check completed
+2025-06-16 18:06:01,757 - apscheduler.executors.default - INFO - Job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:06:41 +03)" executed successfully
+2025-06-16 18:06:41,097 - apscheduler.executors.default - INFO - Running job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:07:41 +03)" (scheduled at 2025-06-16 18:06:41.091663+03:00)
+2025-06-16 18:06:41,098 - src.scheduler.scheduler - INFO - [2025-06-16 18:06:41] Starting appointment check...
+2025-06-16 18:06:41,098 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:06:41,099 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:06:41,099 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:06:41,099 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:06:41,099 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:06:42,045 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:06:45,807 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:06:45,822 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:06:45,834 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:06:45,946 - src.captcha.solver - INFO - Captcha solved: LEGEZE
+2025-06-16 18:06:45,946 - src.scraper.appointment_checker - INFO - CAPTCHA solved: LEGEZE
+2025-06-16 18:06:45,951 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:06:46,039 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: LEGEZE
+2025-06-16 18:06:46,045 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:06:46,380 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:06:51,399 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:06:51,486 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:06:51,486 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:06:51,486 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:06:52,307 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:06:56,021 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:06:56,037 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:06:56,049 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:06:56,148 - src.captcha.solver - INFO - Captcha solved: TEECEL
+2025-06-16 18:06:56,148 - src.scraper.appointment_checker - INFO - CAPTCHA solved: TEECEL
+2025-06-16 18:06:56,153 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:06:56,237 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: TEECEL
+2025-06-16 18:06:56,242 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:06:56,567 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:07:01,588 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:07:01,682 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:07:01,682 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:07:01,682 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:07:01,682 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:07:01,682 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:07:01,682 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:07:01,682 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:07:01,682 - src.scheduler.scheduler - INFO - [2025-06-16 18:06:41] Appointment check completed
+2025-06-16 18:07:01,682 - apscheduler.executors.default - INFO - Job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:07:41 +03)" executed successfully
+2025-06-16 18:07:41,094 - apscheduler.executors.default - INFO - Running job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:08:41 +03)" (scheduled at 2025-06-16 18:07:41.091663+03:00)
+2025-06-16 18:07:41,095 - src.scheduler.scheduler - INFO - [2025-06-16 18:07:41] Starting appointment check...
+2025-06-16 18:07:41,096 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:07:41,096 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:07:41,096 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:07:41,096 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:07:41,096 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:07:42,024 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:07:45,748 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:07:45,762 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:07:45,774 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:07:45,869 - src.captcha.solver - INFO - Captcha solved: GEEEET
+2025-06-16 18:07:45,869 - src.scraper.appointment_checker - INFO - CAPTCHA solved: GEEEET
+2025-06-16 18:07:45,874 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:07:45,962 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: GEEEET
+2025-06-16 18:07:45,967 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:07:46,321 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:07:51,339 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:07:51,427 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:07:51,428 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:07:51,428 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:07:52,243 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:07:56,010 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:07:56,026 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:07:56,038 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:07:56,133 - src.captcha.solver - INFO - Captcha solved: EEEECE
+2025-06-16 18:07:56,134 - src.scraper.appointment_checker - INFO - CAPTCHA solved: EEEECE
+2025-06-16 18:07:56,139 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:07:56,228 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: EEEECE
+2025-06-16 18:07:56,233 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:07:56,572 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:08:01,589 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:08:01,683 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:08:01,683 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:08:01,683 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:08:01,683 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:08:01,683 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:08:01,683 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:08:01,684 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:08:01,684 - src.scheduler.scheduler - INFO - [2025-06-16 18:07:41] Appointment check completed
+2025-06-16 18:08:01,684 - apscheduler.executors.default - INFO - Job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:08:41 +03)" executed successfully
+2025-06-16 18:08:41,093 - apscheduler.executors.default - INFO - Running job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:09:41 +03)" (scheduled at 2025-06-16 18:08:41.091663+03:00)
+2025-06-16 18:08:41,094 - src.scheduler.scheduler - INFO - [2025-06-16 18:08:41] Starting appointment check...
+2025-06-16 18:08:41,095 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:08:41,095 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:08:41,095 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:08:41,095 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:08:41,095 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:08:42,002 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:08:42,003 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:08:42,003 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:08:42,003 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:08:42,003 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:08:42,003 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:08:42,003 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:08:45,730 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:08:45,745 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:08:45,758 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:08:45,863 - src.captcha.solver - INFO - Captcha solved: GEETEE
+2025-06-16 18:08:45,863 - src.scraper.appointment_checker - INFO - CAPTCHA solved: GEETEE
+2025-06-16 18:08:45,868 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:08:45,947 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: GEETEE
+2025-06-16 18:08:45,952 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:08:46,299 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:08:51,314 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:08:51,400 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:08:51,400 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:08:51,400 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:08:52,215 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:08:55,965 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:08:55,975 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:08:55,984 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:08:56,075 - src.captcha.solver - INFO - Captcha solved: CEETEE
+2025-06-16 18:08:56,076 - src.scraper.appointment_checker - INFO - CAPTCHA solved: CEETEE
+2025-06-16 18:08:56,081 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:08:56,170 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: CEETEE
+2025-06-16 18:08:56,175 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:08:56,496 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:09:01,515 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:09:01,603 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:09:01,603 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:09:01,603 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:09:01,603 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:09:01,603 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:09:01,603 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:09:01,603 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:09:01,603 - src.scheduler.scheduler - INFO - [2025-06-16 18:08:41] Appointment check completed
+2025-06-16 18:09:01,603 - apscheduler.executors.default - INFO - Job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:09:41 +03)" executed successfully
+2025-06-16 18:09:41,097 - apscheduler.executors.default - INFO - Running job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:10:41 +03)" (scheduled at 2025-06-16 18:09:41.091663+03:00)
+2025-06-16 18:09:41,097 - src.scheduler.scheduler - INFO - [2025-06-16 18:09:41] Starting appointment check...
+2025-06-16 18:09:41,098 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:09:41,098 - src.scraper.appointment_checker - INFO - STARTING APPOINTMENT CHECK SESSION
+2025-06-16 18:09:41,098 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:09:41,098 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Altunizade
+2025-06-16 18:09:41,098 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO -    • IDATA Office: Altunizade
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:09:42,019 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:09:45,694 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:09:45,702 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:09:45,710 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:09:45,799 - src.captcha.solver - INFO - Captcha solved: ULTEGEE
+2025-06-16 18:09:45,799 - src.scraper.appointment_checker - INFO - CAPTCHA solved: ULTEGEE
+2025-06-16 18:09:45,804 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:09:45,890 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: ULTEGEE
+2025-06-16 18:09:45,895 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:09:46,649 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:09:51,659 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:09:51,744 - src.scraper.appointment_checker - INFO - ❌ No appointments at Altunizade
+2025-06-16 18:09:51,744 - src.scraper.appointment_checker - INFO - 
+🏢 CHECKING OFFICE: Gayrettepe
+2025-06-16 18:09:51,744 - src.scraper.appointment_checker - INFO - ----------------------------------------
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO - 📋 INPUT PARAMETERS:
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO -    • Residence City: İstanbul
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO -    • IDATA Office: Gayrettepe
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO -    • Travel Purpose: Tourism
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO -    • Service Type: Standard
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO -    • Number of Persons: 3
+2025-06-16 18:09:52,538 - src.scraper.appointment_checker - INFO - 🌐 Navigating to main page...
+2025-06-16 18:09:56,252 - src.scraper.appointment_checker - INFO - 🔐 Solving CAPTCHA...
+2025-06-16 18:09:56,268 - src.scraper.appointment_checker - INFO - Found CAPTCHA image with alt='CAPTCHA Resmi'
+2025-06-16 18:09:56,279 - src.scraper.appointment_checker - INFO - CAPTCHA image source type: base64
+2025-06-16 18:09:56,366 - src.captcha.solver - INFO - Captcha solved: CEUECE
+2025-06-16 18:09:56,366 - src.scraper.appointment_checker - INFO - CAPTCHA solved: CEUECE
+2025-06-16 18:09:56,372 - src.scraper.appointment_checker - INFO - Found CAPTCHA input field (mailConfirmCode)
+2025-06-16 18:09:56,456 - src.scraper.appointment_checker - INFO - Entered CAPTCHA code: CEUECE
+2025-06-16 18:09:56,462 - src.scraper.appointment_checker - INFO - Found submit button using id: confirmationbtn
+2025-06-16 18:09:56,791 - src.scraper.appointment_checker - INFO - Clicked submit button
+2025-06-16 18:10:01,811 - src.scraper.appointment_checker - WARNING - CAPTCHA might be incorrect, will retry
+2025-06-16 18:10:01,891 - src.scraper.appointment_checker - INFO - ❌ No appointments at Gayrettepe
+2025-06-16 18:10:01,891 - src.scraper.appointment_checker - INFO - 
+============================================================
+2025-06-16 18:10:01,891 - src.scraper.appointment_checker - INFO - SESSION SUMMARY
+2025-06-16 18:10:01,891 - src.scraper.appointment_checker - INFO - ============================================================
+2025-06-16 18:10:01,891 - src.scraper.appointment_checker - INFO - Altunizade: ❌ NOT AVAILABLE
+2025-06-16 18:10:01,891 - src.scraper.appointment_checker - INFO - Gayrettepe: ❌ NOT AVAILABLE
+2025-06-16 18:10:01,891 - __main__ - INFO - No appointments available: No appointments available at any office
+2025-06-16 18:10:01,891 - src.scheduler.scheduler - INFO - [2025-06-16 18:09:41] Appointment check completed
+2025-06-16 18:10:01,891 - apscheduler.executors.default - INFO - Job "Check Italy visa appointments (trigger: interval[0:01:00], next run at: 2025-06-16 18:10:41 +03)" executed successfully
