@@ -43,18 +43,34 @@ def load_config() -> Dict:
             'travel_purpose': os.getenv('TRAVEL_PURPOSE', 'Tourism'),
             'service_type': os.getenv('SERVICE_TYPE', 'Standard'),
             'num_persons': os.getenv('NUM_PERSONS', '3'),
+        },
+        'database': {
+            'enabled': os.getenv('DATABASE_ENABLED', 'true').lower() == 'true',
+            'host': os.getenv('DATABASE_HOST', 'localhost'),
+            'port': int(os.getenv('DATABASE_PORT', '5432')),
+            'name': os.getenv('DATABASE_NAME', 'idata_appointment_checker'),
+            'user': os.getenv('DATABASE_USER', 'postgres'),
+            'password': os.getenv('DATABASE_PASSWORD', ''),
+            'url': os.getenv('DATABASE_URL'),  # Alternative to individual components
         }
     }
     
     # Validate required configurations
     if config['telegram']['enabled']:
-        if not config['telegram']['bot_token'] or not config['telegram']['chat_id']:
-            raise ValueError("Telegram is enabled but BOT_TOKEN or CHAT_ID is missing")
+        if not config['telegram']['bot_token']:
+            raise ValueError("Telegram is enabled but BOT_TOKEN is missing")
     
     if config['email']['enabled']:
         required_email_fields = ['smtp_username', 'smtp_password', 'from_email', 'to_email']
         for field in required_email_fields:
             if not config['email'][field]:
                 raise ValueError(f"Email is enabled but {field.upper()} is missing")
+    
+    if config['database']['enabled']:
+        if not config['database']['url']:
+            # If no URL provided, construct from components
+            if not all([config['database']['host'], config['database']['name'], 
+                       config['database']['user'], config['database']['password']]):
+                raise ValueError("Database is enabled but required connection parameters are missing")
     
     return config

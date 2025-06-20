@@ -15,5 +15,12 @@ APScheduler==3.10.4
 # Environment and configuration
 python-dotenv==1.0.0
 
+# Telegram bot
+python-telegram-bot==20.7
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+
 # Additional utilities
 lxml==4.9.3

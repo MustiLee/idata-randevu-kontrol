@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -19,7 +20,7 @@ class Notifier:
         
         if self.telegram_enabled:
             self.telegram_bot_token = config['telegram']['bot_token']
-            self.telegram_chat_id = config['telegram']['chat_id']
+            self.telegram_chat_id = config['telegram'].get('chat_id', 0)
         
         if self.email_enabled:
             self.email_config = config['email']
@@ -59,22 +60,54 @@ class Notifier:
             True if sent successfully
         """
         try:
-            url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
-            
             # Format message with subject
             full_message = f"🔔 *{subject}*\n\n{message}"
             
-            payload = {
-                'chat_id': self.telegram_chat_id,
-                'text': full_message,
-                'parse_mode': 'Markdown'
-            }
+            # Try to send to multiple users first
+            try:
+                from ..bot.bot_handler import send_message_to_all_users
+                
+                # Build database URL if available
+                database_url = None
+                if hasattr(self, 'config') and self.config.get('database', {}).get('enabled'):
+                    db_config = self.config['database']
+                    if db_config['url']:
+                        database_url = db_config['url']
+                    else:
+                        database_url = (
+                            f"postgresql://{db_config['user']}:{db_config['password']}"
+                            f"@{db_config['host']}:{db_config['port']}/{db_config['name']}"
+                        )
+                
+                result = asyncio.run(send_message_to_all_users(
+                    self.telegram_bot_token,
+                    full_message,
+                    database_url=database_url,
+                    users_file="users.json"
+                ))
+                if result > 0:
+                    logger.info(f"Telegram notification sent to {result} users")
+                    return True
+            except Exception as e:
+                logger.debug(f"Failed to send to multiple users: {e}")
             
-            response = requests.post(url, json=payload, timeout=10)
-            response.raise_for_status()
+            # Fallback to single chat ID for backward compatibility
+            if hasattr(self, 'telegram_chat_id') and self.telegram_chat_id:
+                url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
+                payload = {
+                    'chat_id': self.telegram_chat_id,
+                    'text': full_message,
+                    'parse_mode': 'Markdown'
+                }
+                
+                response = requests.post(url, json=payload, timeout=10)
+                response.raise_for_status()
+                
+                logger.info("Telegram notification sent to single chat ID")
+                return True
             
-            logger.info("Telegram notification sent successfully")
-            return True
+            logger.warning("No Telegram recipients configured")
+            return False
             
         except Exception as e:
             logger.error(f"Failed to send Telegram notification: {e}")
@@ -165,20 +198,53 @@ class Notifier:
         # For Telegram, we'll send the status message directly since it already contains formatting
         if self.telegram_enabled:
             try:
-                url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
-                
-                payload = {
-                    'chat_id': self.telegram_chat_id,
-                    'text': status,
-                    'parse_mode': 'Markdown'
-                }
-                
-                response = requests.post(url, json=payload, timeout=10)
-                response.raise_for_status()
-                
-                logger.info("Telegram startup notification sent successfully")
+                # Try to send to multiple users first
+                try:
+                    from ..bot.bot_handler import send_message_to_all_users
+                    
+                    # Build database URL if available
+                    database_url = None
+                    if hasattr(self, 'config') and self.config.get('database', {}).get('enabled'):
+                        db_config = self.config['database']
+                        if db_config['url']:
+                            database_url = db_config['url']
+                        else:
+                            database_url = (
+                                f"postgresql://{db_config['user']}:{db_config['password']}"
+                                f"@{db_config['host']}:{db_config['port']}/{db_config['name']}"
+                            )
+                    
+                    result = asyncio.run(send_message_to_all_users(
+                        self.telegram_bot_token,
+                        status,
+                        database_url=database_url,
+                        users_file="users.json"
+                    ))
+                    if result > 0:
+                        logger.info(f"Telegram status notification sent to {result} users")
+                    else:
+                        raise Exception("No users to send to")
+                except Exception as e:
+                    logger.debug(f"Failed to send to multiple users: {e}")
+                    
+                    # Fallback to single chat ID
+                    if hasattr(self, 'telegram_chat_id') and self.telegram_chat_id:
+                        url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
+                        payload = {
+                            'chat_id': self.telegram_chat_id,
+                            'text': status,
+                            'parse_mode': 'Markdown'
+                        }
+                        
+                        response = requests.post(url, json=payload, timeout=10)
+                        response.raise_for_status()
+                        
+                        logger.info("Telegram status notification sent to single chat ID")
+                    else:
+                        logger.warning("No Telegram recipients configured for status notification")
+                        
             except Exception as e:
-                logger.error(f"Failed to send Telegram startup notification: {e}")
+                logger.error(f"Failed to send Telegram status notification: {e}")
         
         # For email, use the standard method
         if self.email_enabled:

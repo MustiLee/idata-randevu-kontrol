@@ -4,14 +4,17 @@ IDATA Italy Visa Appointment Checker
 Main application entry point
 """
 
+import asyncio
 import logging
 import sys
+import threading
 from datetime import datetime
 
 from src.config import load_config
 from src.notifier.notifier import Notifier
 from src.scheduler.scheduler import AppointmentScheduler
 from src.scraper.appointment_checker import AppointmentChecker
+from src.bot.bot_handler import BotHandler
 
 
 def setup_logging(log_level: str = 'INFO'):
@@ -110,6 +113,58 @@ def main():
         )
         
         notifier.send_status_notification(startup_message)
+        
+        # Initialize Telegram bot if enabled
+        bot_handler = None
+        if config['telegram']['enabled'] and config['telegram']['bot_token']:
+            try:
+                # Build database URL if database is enabled
+                database_url = None
+                if config['database']['enabled']:
+                    if config['database']['url']:
+                        database_url = config['database']['url']
+                    else:
+                        database_url = (
+                            f"postgresql://{config['database']['user']}:{config['database']['password']}"
+                            f"@{config['database']['host']}:{config['database']['port']}/{config['database']['name']}"
+                        )
+                
+                bot_handler = BotHandler(
+                    token=config['telegram']['bot_token'],
+                    database_url=database_url,
+                    users_file="users.json"
+                )
+                
+                # Add existing chat_id from config to database if available
+                if config['telegram']['chat_id'] and config['telegram']['chat_id'] != 0:
+                    existing_chat_id = config['telegram']['chat_id']
+                    if bot_handler.user_manager.add_user(existing_chat_id):
+                        logger.info(f"Added existing Telegram ID {existing_chat_id} to database")
+                    else:
+                        logger.info(f"Existing Telegram ID {existing_chat_id} already in database")
+                
+                bot_handler.setup_handlers()
+                
+                # Start bot in a separate thread
+                def run_bot():
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    try:
+                        loop.run_until_complete(bot_handler.start_polling())
+                    except Exception as e:
+                        logger.error(f"Bot polling error: {e}")
+                    finally:
+                        try:
+                            loop.close()
+                        except:
+                            pass
+                
+                bot_thread = threading.Thread(target=run_bot, daemon=True)
+                bot_thread.start()
+                logger.info("Telegram bot started and listening for commands")
+                
+            except Exception as e:
+                logger.error(f"Failed to start Telegram bot: {e}")
         
         # Create scheduler
         scheduler = AppointmentScheduler(
