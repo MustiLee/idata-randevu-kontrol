@@ -90,10 +90,26 @@ def main():
         
         # Initialize notifier for startup notification
         notifier = Notifier(config)
-        notifier.send_status_notification(
-            f"IDATA Appointment Checker started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
-            f"Checking every {config['general']['check_interval_minutes']} minutes."
+        
+        # Create detailed startup message
+        startup_message = (
+            f"🚀 *IDATA Appointment Checker Started*\n\n"
+            f"📅 *Time:* {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+            f"⏰ *Check Interval:* Every {config['general']['check_interval_minutes']} minutes\n"
+            f"🖥️ *Browser Mode:* {'Headless' if config['general']['headless_browser'] else 'Visible'}\n\n"
+            f"*📋 Configuration:*\n"
+            f"• City: {config['appointment']['residence_city']}\n"
+            f"• Offices: {', '.join(config['appointment']['idata_offices'])}\n"
+            f"• Purpose: {config['appointment']['travel_purpose']}\n"
+            f"• Service: {config['appointment']['service_type']}\n"
+            f"• Persons: {config['appointment']['num_persons']}\n\n"
+            f"*🔔 Notifications:*\n"
+            f"• Telegram: {'✅ Enabled' if config['telegram']['enabled'] else '❌ Disabled'}\n"
+            f"• Email: {'✅ Enabled' if config['email']['enabled'] else '❌ Disabled'}\n\n"
+            f"_The bot is now monitoring appointments. You will be notified when slots become available._"
         )
+        
+        notifier.send_status_notification(startup_message)
         
         # Create scheduler
         scheduler = AppointmentScheduler(

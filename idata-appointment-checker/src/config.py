@@ -26,7 +26,7 @@ def load_config() -> Dict:
         'telegram': {
             'enabled': os.getenv('TELEGRAM_ENABLED', 'false').lower() == 'true',
             'bot_token': os.getenv('TELEGRAM_BOT_TOKEN', ''),
-            'chat_id': os.getenv('TELEGRAM_CHAT_ID', ''),
+            'chat_id': int(os.getenv('TELEGRAM_CHAT_ID', '0')) if os.getenv('TELEGRAM_CHAT_ID') else 0,
         },
         'email': {
             'enabled': os.getenv('EMAIL_ENABLED', 'false').lower() == 'true',

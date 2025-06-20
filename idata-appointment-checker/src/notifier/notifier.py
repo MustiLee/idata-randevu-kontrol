@@ -161,6 +161,25 @@ class Notifier:
             status: Status message
         """
         subject = "ℹ️ IDATA Appointment Checker Status"
-        message = status
         
-        self.send_notification(subject, message)
+        # For Telegram, we'll send the status message directly since it already contains formatting
+        if self.telegram_enabled:
+            try:
+                url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
+                
+                payload = {
+                    'chat_id': self.telegram_chat_id,
+                    'text': status,
+                    'parse_mode': 'Markdown'
+                }
+                
+                response = requests.post(url, json=payload, timeout=10)
+                response.raise_for_status()
+                
+                logger.info("Telegram startup notification sent successfully")
+            except Exception as e:
+                logger.error(f"Failed to send Telegram startup notification: {e}")
+        
+        # For email, use the standard method
+        if self.email_enabled:
+            self._send_email(subject, status)
