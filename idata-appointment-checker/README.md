@@ -120,10 +120,57 @@ NUM_PERSONS=3
 
 ## Usage
 
+### Method 1: Python (Local)
+
 Run the application:
 
 ```bash
 python main.py
+```
+
+### Method 2: Docker
+
+#### Using Docker Compose (Recommended)
+
+1. Copy `.env.example` to `.env` and configure your settings:
+```bash
+cp .env.example .env
+```
+
+2. Build and run with docker-compose:
+```bash
+docker-compose up -d
+```
+
+3. View logs:
+```bash
+docker-compose logs -f
+```
+
+4. Stop the container:
+```bash
+docker-compose down
+```
+
+#### Using Docker directly
+
+1. Build the image:
+```bash
+docker build -t idata-appointment-checker .
+```
+
+2. Run the container:
+```bash
+docker run -d \
+  --name idata-checker \
+  --env-file .env \
+  --restart unless-stopped \
+  idata-appointment-checker
+```
+
+3. View logs:
+```bash
+docker logs -f idata-checker
 ```
 
 The application will:

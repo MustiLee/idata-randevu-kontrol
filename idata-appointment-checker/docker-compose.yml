@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  appointment-checker:
+    build: .
+    container_name: idata-appointment-checker
+    restart: unless-stopped
+    environment:
+      # General Configuration
+      - CHECK_INTERVAL_MINUTES=${CHECK_INTERVAL_MINUTES:-15}
+      - HEADLESS_BROWSER=${HEADLESS_BROWSER:-true}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      
+      # Telegram Configuration
+      - TELEGRAM_ENABLED=${TELEGRAM_ENABLED:-false}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      
+      # Email Configuration
+      - EMAIL_ENABLED=${EMAIL_ENABLED:-false}
+      - EMAIL_SMTP_SERVER=${EMAIL_SMTP_SERVER:-smtp.gmail.com}
+      - EMAIL_SMTP_PORT=${EMAIL_SMTP_PORT:-587}
+      - EMAIL_SMTP_USERNAME=${EMAIL_SMTP_USERNAME}
+      - EMAIL_SMTP_PASSWORD=${EMAIL_SMTP_PASSWORD}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - EMAIL_TO=${EMAIL_TO}
+      
+      # Appointment Configuration
+      - RESIDENCE_CITY=${RESIDENCE_CITY:-İstanbul}
+      - IDATA_OFFICES=${IDATA_OFFICES:-Altunizade,Gayrettepe}
+      - TRAVEL_PURPOSE=${TRAVEL_PURPOSE:-Tourism}
+      - SERVICE_TYPE=${SERVICE_TYPE:-Standard}
+      - NUM_PERSONS=${NUM_PERSONS:-1}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - appointment-network
+
+networks:
+  appointment-network:
+    driver: bridge

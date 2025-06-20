@@ -5,13 +5,15 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+import shutil
+import os
 
 from src.captcha.solver import CaptchaSolver
 
@@ -50,7 +52,24 @@ class AppointmentChecker:
         options.add_experimental_option('useAutomationExtension', False)
         options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
         
-        self.driver = webdriver.Chrome(options=options)
+        # Try to find Chrome/Chromium driver
+        chrome_driver_path = shutil.which('chromedriver')
+        chromium_driver_path = shutil.which('chromium-driver')
+        
+        if chrome_driver_path:
+            self.driver = webdriver.Chrome(options=options)
+        elif chromium_driver_path:
+            # For Docker/Linux environments with Chromium
+            service = Service(executable_path=chromium_driver_path)
+            options.binary_location = shutil.which('chromium') or shutil.which('chromium-browser') or '/usr/bin/chromium'
+            self.driver = webdriver.Chrome(service=service, options=options)
+        else:
+            # Fallback: try without specifying driver path
+            try:
+                self.driver = webdriver.Chrome(options=options)
+            except WebDriverException:
+                raise WebDriverException("Neither Chrome nor Chromium driver found. Please install Chrome/Chromium and its driver.")
+        
         self.driver.implicitly_wait(10)
     
     def _close_driver(self):
